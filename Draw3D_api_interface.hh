@@ -29,9 +29,9 @@ namespace drawNS {
 
   /*!
    * \brief Point in 3D
-   * Class represents point in 3D. 
+   * Class represents point in 3D.
    */
-  
+
   class Point3D {
     /*!
      * \brief x,y,z coord
@@ -71,9 +71,9 @@ namespace drawNS {
 	return data[ind];
       std::cerr << "operator[] dla Point3D poza zakresem" << std::endl;
       exit(1);
-    };      
+    };
   };
-  
+
   /*!
    * \brief Abstract interface for drawing class
    * Abstract class used as interface for 3D drawing class implementations.
@@ -91,10 +91,10 @@ namespace drawNS {
      *
      * For negative vaules - auto-replots is off and replot can be done only by function redraw(),
      * for 0 value - auto-replots is off and replot is done after every drawing functions,
-     * for positive values - auto-replots is on and value is time (in miliseconds) between replots, 
+     * for positive values - auto-replots is on and value is time (in miliseconds) between replots,
      * drawing functions and redraw() don't replot in this mode.
      */
-  int refresh_rate_ms;    
+  int refresh_rate_ms;
   public:
     /*!
      * \brief Constructor
@@ -121,26 +121,26 @@ namespace drawNS {
      */
     virtual uint draw_polygonal_chain(const std::vector<Point3D> & points, const std::string & color = "black") = 0;
     /*!
-     * \brief draws polyhedron described by its apexs 
+     * \brief draws polyhedron described by its apexs
      * \param points_map - vector of points vectors. Every vector contains points describes one "layer" of polyhedron
      * \param color - color of line (see class description)
      * \return id of shape (see erase_shape, change_shape_color)
      */
     virtual uint draw_polyhedron(const std::vector<std::vector<Point3D> > & points_map, const std::string & color = "black") = 0;
     /*!
-     * \brief draws surface described by its points 
+     * \brief draws surface described by its points
      * \param points_map - vector of points vectors. Every vector contains points describes one "line" in surface
      * \param color - color of line (see class description)
      * \return id of shape (see erase_shape, change_shape_color)
      */
     virtual uint draw_surface(const std::vector<std::vector<Point3D> > & points_map, const std::string & color = "black") = 0;
     /*!
-     * \brief erase shape by id 
+     * \brief erase shape by id
      * \param id - id of shape
      */
     virtual void erase_shape(uint id) = 0;
     /*!
-     * \brief change color of shape 
+     * \brief change color of shape
      * \param id - id of shape
      * \param color - color of line (see class description)
      */
@@ -148,12 +148,12 @@ namespace drawNS {
     /*!
      * \brief change mode for ploting and/or time between auto-replots
      * \param ref_time_ms - mode for plotting (negative, 0, positive, see refresh_rate_ms) and time between auto-replots (in miliseconds).
-     */    
+     */
     virtual void change_ref_time_ms(int ref_time_ms) = 0;
     /*!
      * \brief replot all shapes
      * Replots all shapes, works only in negative refresh_rate_ms value mode.
-     */    
+     */
     virtual void redraw() = 0;
   };
 
