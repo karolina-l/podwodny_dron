@@ -71,7 +71,6 @@ using namespace std;
         t[i]=t[i]-srodek;
       }
 
-      //srodek=nmob*srodek;
       for(int i=0; i<8; i++)
       {
         t[i]=obr*t[i];
@@ -115,15 +114,4 @@ void Prostopadloscian::zmien_polozenie(const TWektor<double,3> &w)
   }
   gnuplot->erase_shape(nazwa);
   this->rysuj_ksztalt();*/
-}
-
-void Prostopadloscian::zmien_wierzcholki(const TWektor<double,3> *wekt)
-{
-  gnuplot->erase_shape(nazwa);
-  for(int i=0; i<8; i++)
-  {
-    t[i]=wekt[i];
-  }
-  this->rysuj_ksztalt();
-
 }

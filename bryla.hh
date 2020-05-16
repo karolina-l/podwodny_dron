@@ -48,6 +48,16 @@ public:
   * \brief Naglowek wirtualnej metody odpowiadajacej za rysowanie bryl
   */
   virtual void rysuj_ksztalt()=0;
+  /*!
+  * \brief Naglowek wirtualnej metody odpowiadajacej za zmiane kata prostopadloscianu wzgledem osi OZ
+  * \param1 double kat - kat obrotu
+  */
+  virtual void zmien_kat(double kat)=0;
+  /*!
+  * \brief Naglowek wirtualnej metody odpowiadajacej za zmiane polozenia prostopadloscianu
+  * \param1 TWektor<double,3> w - wektor zmiany polozenia
+  */
+  virtual void zmien_polozenie(const TWektor<double,3> &w) =0;
 };
 
 

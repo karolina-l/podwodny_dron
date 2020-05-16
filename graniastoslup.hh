@@ -1,5 +1,5 @@
-#ifndef PROSTOPADLOSCIAN
-#define PROSTOPADLOSCIAN
+#ifndef GRANIASTOSLUP
+#define GRANIASTOSLUP
 
 #include "rysowanie_int.hh"
 #include "vector.hh"
@@ -15,22 +15,24 @@ using drawNS::APIGnuPlot3D;
 /*!
 * \brief Klasa Prostopadloscian dziedziczaca publicznie po klasie Bryla
 */
-class Prostopadloscian:public Bryla{
+class Graniastoslup:public Bryla{
   /*!
-  * \brief wierzcholki prostopadloscianu
+  * \brief wierzcholki graniastoslupa
   */
-  TWektor<double,3> t[8];
+protected:
+  
+  TWektor<double,3> t[12];
 
 public:
   /*!
-  * \brief Konstruktor obiektu klasy Prostopadloscian
+  * \brief Konstruktor obiektu klasy Graniastoslup
   * \param1 drawNS::APIGnuPlot3D *plot - wskaznik na dany obszar rysowania
   * \param2 TWektor<double,3> sr - wspolrzedne srodka
   * \param3 TMacierzKw<double,3> mat - macierz m_obrotu
   * \param4 TWektor<double,3> *w - tablica wektorow zawieracjacych wspolrzedne wierzcholkow prostopadloscianu
   * Metoda korzysta z konstruktora klasy Bryla
   */
-  Prostopadloscian(drawNS::APIGnuPlot3D*plot, const TWektor<double,3> &sr, const TMacierzKw<double,3> &mat, TWektor<double,3>*w);
+  Graniastoslup(drawNS::APIGnuPlot3D*plot, const TWektor<double,3> &sr, const TMacierzKw<double,3> &mat, TWektor<double,3>*w);
   /*!
   * \brief Dziedziczona metoda sluzaca do rysowania obiektow
   */
