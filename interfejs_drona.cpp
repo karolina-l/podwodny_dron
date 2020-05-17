@@ -8,12 +8,12 @@ using drawNS::APIGnuPlot3D;
 
 Interfejs::Interfejs(drawNS::APIGnuPlot3D*plot, const TWektor<double,3> &sr1, const TWektor<double,3> &sr2, const TWektor<double,3> &srdr, TWektor<double,3> *ws1, TWektor<double,3> *ws2, TWektor<double,3> *wd, const TMacierzKw<double,3> &mat)
 {
-  Sruba *s1=new Sruba(plot, sr1, mat, ws1, srdr);
+/*  Sruba *s1=new Sruba(plot, sr1, mat, ws1, srdr);
   Sruba *s2 = new Sruba(plot, sr2, mat, ws2, srdr);
-  Dron *dron = new Dron(plot, srdr, mat, wd);
-  /*s1.Sruba::Sruba(plot, sr1, mat, ws1, srdr);
-  s2.Sruba::Sruba(plot, sr2, mat, ws2, srdr);
-  dron.Dron::Dron(plot, srdr, mat, wd);*/
+  Dron *dron = new Dron(plot, srdr, mat, wd);*/
+  s1(plot, sr1, mat, ws1, srdr);
+  s2(plot, sr2, mat, ws2, srdr);
+  dron(plot, srdr, mat, wd);
 }
 
 void Interfejs::rysuj_ksztalt()

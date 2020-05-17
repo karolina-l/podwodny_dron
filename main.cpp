@@ -1,6 +1,6 @@
 #include <iostream>
 #include <cstdlib>
-#include "interfejs_drona.hh"
+#include "dron.hh"
 //#include "prostopadloscian.hh"
 //#include "sruba.hh"
 #include "dno.hh"
@@ -125,7 +125,7 @@ int main()
   //Sruba g(wsk,sdk,y,tab, srw1);
   //Sruba g1(wsk, sdk1, y1, tab1, srw1);
   //Prostopadloscian p(wsk, sdk2, y2, tab2);
-  Interfejs I(wsk, sdk, sdk1, sdk2, tab, tab1, tab2, y);
+  Dron I(wsk, sdk, sdk1, sdk2, tab, tab1, tab2, y);
 
 /////////dobry main/////////  TWektor<double,3> tab[8];
 /*  TMacierzKw<double,3> x;
