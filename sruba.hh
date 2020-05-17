@@ -37,7 +37,7 @@ public:
   * \param1 double kat - kat obrotu
   */
   virtual ~Sruba(){}
-  
+
   void zmien_kat(double kat) override;
   /*!
   * \brief Metoda pozwalajaca na zmiane polozenia prostopadloscianu
@@ -45,6 +45,7 @@ public:
   */
   void zmien_polozenie(const TWektor<double,3> &w) override;
   void obrot_sruby();
+
 };
 
 

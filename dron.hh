@@ -32,6 +32,7 @@ public:
   * \param1 double kat - kat obrotu
   */
   virtual ~Dron(){}
+  void rysuj_ksztalt() override;
   void zmien_kat(double kat) override;
   /*!
   * \brief Metoda pozwalajaca na zmiane polozenia prostopadloscianu

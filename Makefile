@@ -7,7 +7,7 @@ example.out: Dr3D_gnuplot_api.o main.o prostopadloscian.o dron.o sruba.o granias
 	g++ -o example.out main.o Dr3D_gnuplot_api.o prostopadloscian.o dron.o sruba.o graniastoslup.o dno.o tafla.o templates.o\
 	 m_obrotu.o -lpthread
 
-main.o: main.cpp Dr3D_gnuplot_api.hh  templates.cpp m_obrotu.hh
+main.o: main.cpp Dr3D_gnuplot_api.hh  templates.cpp m_obrotu.hh dron.hh
 	g++ ${CPPFLAGS} -o main.o main.cpp
 
 tafla.o: powierzchnia.hh tafla.cpp tafla.hh rysowanie_int.hh vector.hh

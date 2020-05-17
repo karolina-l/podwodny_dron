@@ -47,8 +47,7 @@ void Sruba::obrot_sruby()
       {
         t[i]=t[i]+sr_drona;
       }
-
-      gnuplot->erase_shape(nazwa);
+      //gnuplot->erase_shape(nazwa);
       this->rysuj_ksztalt();
 
     /*M_obr obr;
@@ -89,7 +88,7 @@ void Sruba::zmien_polozenie(const TWektor<double,3> &w)
   {
     t[i]=t[i]+w;
   }
-  gnuplot->erase_shape(nazwa);
+  //gnuplot->erase_shape(nazwa);
   this->rysuj_ksztalt();
 
   /*sr_drona=sr_drona+w;

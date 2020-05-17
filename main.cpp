@@ -57,11 +57,11 @@ int main()
     wirnik>>d[i];
   }
   //cout<<"koniec d"<<endl;
-  for(int j=0; j<17; j++)
+  /*for(int j=0; j<17; j++)
   {
     cout<<d[j]<<endl;
   }
-  cout<<endl;
+  cout<<endl;*/
   for(int i=0; i<16; i++)
   {
     if(i<12)
@@ -82,11 +82,11 @@ int main()
     wirnik1>>d[i];
   }
   //cout<<"koniec d"<<endl;
-  for(int j=0; j<16; j++)
+  /*for(int j=0; j<16; j++)
   {
     cout<<d[j]<<endl;
   }
-  cout<<endl;
+  cout<<endl*/
   for(int i=0; i<17; i++)
   {
     if(i<12)
@@ -106,11 +106,11 @@ int main()
   {
     plik>>d[i];
   }
-  for(int j=0; j<12; j++)
+  /*for(int j=0; j<12; j++)
   {
     cout<<d[j]<<endl;
   }
-  cout<<endl;
+  cout<<endl;*/
   for(int i=0; i<12; i++)
   {
     if(i<8)
@@ -174,6 +174,7 @@ int main()
   g.Graniastoslup::rysuj_ksztalt();
   g1.rysuj_ksztalt();*/
   I.rysuj_ksztalt();
+  wsk->redraw();
 
 
   while(wybor!='q')
