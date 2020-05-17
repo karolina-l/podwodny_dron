@@ -20,7 +20,7 @@ class Graniastoslup:public Bryla{
   * \brief wierzcholki graniastoslupa
   */
 protected:
-  
+
   TWektor<double,3> t[12];
 
 public:
@@ -33,6 +33,7 @@ public:
   * Metoda korzysta z konstruktora klasy Bryla
   */
   Graniastoslup(drawNS::APIGnuPlot3D*plot, const TWektor<double,3> &sr, const TMacierzKw<double,3> &mat, TWektor<double,3>*w);
+  virtual ~Graniastoslup(){}
   /*!
   * \brief Dziedziczona metoda sluzaca do rysowania obiektow
   */

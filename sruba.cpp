@@ -10,7 +10,7 @@ void Sruba::obrot_sruby()
   M_obr obr;
 
     obr=obr.utworz_mRz(1);
-    for(int j=0; i<12; j++)
+    for(int j=0; j<12; j++)
     {
       t[j]=t[j]-srodek;
 
@@ -83,11 +83,11 @@ void Sruba::obrot_sruby()
 void Sruba::zmien_polozenie(const TWektor<double,3> &w)
 {
 
-  *sr_drona=sr_drona+w;
-  srodek=srodek+dod;
+  sr_drona=sr_drona+w;
+  srodek=srodek+w;
   for(int i=0; i<12; i++)
   {
-    t[i]=t[i]+dod;
+    t[i]=t[i]+w;
   }
   gnuplot->erase_shape(nazwa);
   this->rysuj_ksztalt();
