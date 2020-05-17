@@ -19,6 +19,7 @@ class Sruba: public Graniastoslup{
   /*!
   * \brief srodek drona (potrzebne do obrotow)
   */
+protected:
   TWektor<double,3> sr_drona;
 
 public:

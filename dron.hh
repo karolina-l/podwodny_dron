@@ -27,6 +27,7 @@ public:
   * \brief Metoda pozwalajaca na zmiane kata prostopadloscianu wzgledem osi OZ
   * \param1 double kat - kat obrotu
   */
+  virtual ~Dron(){}
   void zmien_kat(double kat) override;
   /*!
   * \brief Metoda pozwalajaca na zmiane polozenia prostopadloscianu

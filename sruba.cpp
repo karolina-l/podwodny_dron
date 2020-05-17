@@ -1,5 +1,6 @@
 #include "sruba.hh"
 #include "m_obrotu.hh"
+#include "dron.hh"
 #include <math.h>
 
 using namespace std;
@@ -7,13 +8,11 @@ using namespace std;
 void Sruba::obrot_sruby()
 {
   M_obr obr;
-    for(int i=0; i<360; i++)
-  {
+
     obr=obr.utworz_mRz(1);
     for(int j=0; i<12; j++)
     {
-      t[i]=t[i]-srodek;
-    }
+      t[j]=t[j]-srodek;
 
     for(int i=0; i<12; i++)
     {
@@ -25,15 +24,34 @@ void Sruba::obrot_sruby()
       t[i]=t[i]+srodek;
     }
 
-    usleep(0.000000001);
-
-    //gnuplot->erase_shape(nazwa);
-    this->rysuj_ksztalt();
+    gnuplot->erase_shape(nazwa);
+    this->Graniastoslup::rysuj_ksztalt();
   }
-  void Graniastoslup::zmien_kat(double kat)
-  {
+}
 
-    M_obr obr;
+  void Sruba::zmien_kat(double kat)
+  {
+      M_obr obr;
+
+      obr=obr.utworz_mRz(kat);
+      for(int i=0; i<12; i++)
+      {
+        t[i]=t[i]-sr_drona;
+      }
+      for(int i=0; i<12; i++)
+      {
+        t[i]=obr*t[i];
+      }
+
+      for(int i=0; i<12; i++)
+      {
+        t[i]=t[i]+sr_drona;
+      }
+
+      gnuplot->erase_shape(nazwa);
+      this->rysuj_ksztalt();
+
+    /*M_obr obr;
     double dzielnik=420;
     double dod=kat/dzielnik;
     for(int wycinek=1; wycinek<=dzielnik; wycinek++)
@@ -59,11 +77,22 @@ void Sruba::obrot_sruby()
       this->rysuj_ksztalt();
     }
 
-
+*/
   }
 
-void Graniastoslup::zmien_polozenie(const TWektor<double,3> &w)
+void Sruba::zmien_polozenie(const TWektor<double,3> &w)
 {
+
+  *sr_drona=sr_drona+w;
+  srodek=srodek+dod;
+  for(int i=0; i<12; i++)
+  {
+    t[i]=t[i]+dod;
+  }
+  gnuplot->erase_shape(nazwa);
+  this->rysuj_ksztalt();
+
+  /*sr_drona=sr_drona+w;
   double dzielnik=1000;
   TWektor<double,3> dod;
   dod=w/dzielnik;
@@ -74,11 +103,8 @@ void Graniastoslup::zmien_polozenie(const TWektor<double,3> &w)
     {
       t[i]=t[i]+dod;
     }
-    //if(nazwa!=0)
     usleep(0.0000001);
     gnuplot->erase_shape(nazwa);
     this->rysuj_ksztalt();
-  }
-}
-
+  }*/
 }

@@ -19,6 +19,7 @@ class Prostopadloscian:public Bryla{
   /*!
   * \brief wierzcholki prostopadloscianu
   */
+protected:
   TWektor<double,3> t[8];
 
 public:

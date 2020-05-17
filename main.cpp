@@ -1,7 +1,8 @@
 #include <iostream>
 #include <cstdlib>
-#include "prostopadloscian.hh"
-#include "sruba.hh"
+#include "interfejs_drona.hh"
+//#include "prostopadloscian.hh"
+//#include "sruba.hh"
 #include "dno.hh"
 #include "tafla.hh"
 #include "templates.cpp"
@@ -121,10 +122,10 @@ int main()
   }
   M_obr y2(x);
 
-  Sruba g(wsk,sdk,y,tab, srw);
-  Sruba g1(wsk, sdk1, y1, tab1, srw1);
-  Prostopadloscian p(wsk, sdk2, y2, tab2);
-
+  //Sruba g(wsk,sdk,y,tab, srw1);
+  //Sruba g1(wsk, sdk1, y1, tab1, srw1);
+  //Prostopadloscian p(wsk, sdk2, y2, tab2);
+  Interfejs I(wsk, sdk, sdk1, sdk2, tab, tab1, tab2, y);
 
 /////////dobry main/////////  TWektor<double,3> tab[8];
 /*  TMacierzKw<double,3> x;
@@ -169,9 +170,10 @@ int main()
 
   dno.rysuj_ksztalt();
   tafla.rysuj_ksztalt();
-	p.rysuj_ksztalt();
-  g.rysuj_ksztalt();
-  g1.rysuj_ksztalt();
+	/*p.rysuj_ksztalt();
+  g.Graniastoslup::rysuj_ksztalt();
+  g1.rysuj_ksztalt();*/
+  I.rysuj_ksztalt();
 
 
   while(wybor!='q')
@@ -194,8 +196,10 @@ int main()
         double k;
         cout<<"Podaj kat obrotu: ";
         cin>>k;
-        p.zmien_kat(k);
-
+      /*  p.zmien_kat(k);
+        g.zmien_kat(k);
+        g1.zmien_kat(k);*/
+        I.zmien_kat(k);
         break;
       }
 
@@ -204,9 +208,10 @@ int main()
         TWektor<double,3> w;
         cout<<"Podaj wektor przesuniecia: ";
         cin>>w;
-        p.zmien_polozenie(w);
+      /*  p.zmien_polozenie(w);
         g.zmien_polozenie(w);
-        g1.zmien_polozenie(w);
+        g1.zmien_polozenie(w);*/
+        I.zmien_polozenie(w);
         break;
       }
 
@@ -216,9 +221,10 @@ int main()
         break;
 
       case 'r':
-        p.rysuj_ksztalt();
+      /*  p.rysuj_ksztalt();
         g.rysuj_ksztalt();
-        g1.rysuj_ksztalt();
+        g1.rysuj_ksztalt();*/
+        I.rysuj_ksztalt();
         break;
 
 
